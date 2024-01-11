@@ -7,6 +7,7 @@ There is two model in the project
 2. PPO(using MLP for policy) 
 
 ## How to run 
+1. `pip install -r requirements.txt`
 1. `python doi_model.py` to create the world model
 2. `python env.py` to create the environment and train the ppo
 
