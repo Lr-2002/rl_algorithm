@@ -2,11 +2,9 @@ import gym
 from gym import spaces
 import numpy as np
 import torch
-import torch.nn as nn
-from doi_model import MLPModel
+from DOI.doi_model import MLPModel
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
-from stable_baselines3.common.evaluation import evaluate_policy
 
 
 class CustomEnvironment(gym.Env):
@@ -55,7 +53,7 @@ def main():
 
     # 加载最低 loss 的模型
     best_model = MLPModel(input_size, hidden_size, output_size)
-    best_model.load_state_dict(torch.load('best_model.pth'))
+    best_model.load_state_dict(torch.load('../best_model.pth'))
 
     # Example of using the CustomEnvironment
     env = CustomEnvironment(best_model)

@@ -86,11 +86,11 @@ def main():
             # 保存最低 loss 的模型
             if loss.item() < best_loss:
                 best_loss = loss.item()
-                torch.save(model.state_dict(), 'best_model.pth')
+                torch.save(model.state_dict(), '../best_model.pth')
 
     # 加载最低 loss 的模型
     best_model = MLPModel(input_size, hidden_size, output_size)
-    best_model.load_state_dict(torch.load('best_model.pth'))
+    best_model.load_state_dict(torch.load('../best_model.pth'))
 
     # 测试模型
     best_model.eval()
